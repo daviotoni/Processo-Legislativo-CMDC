@@ -21,6 +21,12 @@ e as regras de negócio do sistema reflitam a realidade institucional.
 | [`docs/processo-legislativo.md`](docs/processo-legislativo.md) | Poder Legislativo, tipos de proposições, tramitação e comissões |
 | [`docs/modelagem-inicial.md`](docs/modelagem-inicial.md) | Primeiras entidades/domínios sugeridos para o sistema |
 
+## Aplicação (MVP)
+
+A aplicação web do MVP está em [`web/`](web/) — **Next.js + TypeScript + Supabase**, implementando
+o fluxo *registrar → protocolar → tramitar → arquivar*. Banco em [`db/`](db/). Veja
+[`web/README.md`](web/README.md) para rodar.
+
 ## Fonte
 
 As informações foram levantadas no site oficial da Câmara: <https://www.cmdc.rj.gov.br>
