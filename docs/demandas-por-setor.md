@@ -1,94 +1,113 @@
 # Demandas por Setor — Sistema de Processo Legislativo
 
-> **Rascunho / hipóteses a validar.** Este mapa cruza a estrutura administrativa da CMDC
+> **Rascunho / hipóteses a validar.** Cruza a estrutura oficial da **Lei nº 3.525/2025**
 > (ver [`estrutura-cmdc.md`](estrutura-cmdc.md)) com o papel de cada setor no ciclo de vida da
-> proposição. Serve de **roteiro para o levantamento de requisitos** com cada setor — as demandas
-> abaixo são pontos de partida, a serem confirmados/corrigidos pelas próprias equipes.
+> proposição (protocolo → arquivamento). Serve de **roteiro para o levantamento de requisitos** —
+> as demandas são pontos de partida, a confirmar com cada equipe.
 
 Legenda de fase: 🟢 MVP (Fase 1) · 🟡 Fase 2–3 · ⚪ Fase 4–5
 
 ---
 
-## Diretoria de Plenário — o coração da operação
+## Setores centrais do fluxo legislativo
 
-### Coord. de Expediente, Protocolo e Arquivo
-Responsável pela **entrada** e pela **saída** do processo (protocolo → arquivamento).
-- 🟢 Protocolar/autuar proposições com **numeração automática** por tipo/ano.
-- 🟢 Registrar entrada, autor e documentos anexos; digitalização.
-- 🟢 **Arquivar** e **desarquivar** processos; arquivamento por fim de legislatura.
-- 🟡 Guarda documental e integração com o arquivo/documentação histórica.
+### Coordenadoria da Secretaria-Geral ⭐ 🟢
+*Lei 3.525: "controle do processo legislativo e arquivo de proposições".* É o **hub** do sistema.
+- 🟢 **Protocolar/autuar** proposições com numeração automática por tipo/ano.
+- 🟢 Controlar a **situação** e a **movimentação** de cada proposição.
+- 🟢 **Arquivar / desarquivar** processos; arquivamento por fim de legislatura.
+- 🟢 Atendimento e consulta interna sobre andamento das matérias.
 
-### Coord. de Apoio ao Processo Legislativo
-- 🟢 Acompanhar a **situação e os prazos** de cada proposição.
-- 🟢 Registrar **movimentações/despachos** entre setores.
-- 🟡 Montar a **pauta / ordem do dia** e a leitura no expediente.
+### Coordenadoria de Apoio Legislativo 🟢
+*Assessoria jurídica na redação; controle e expedição de projetos de lei.*
+- 🟢 Registrar/expedir **projetos de lei e documentos legislativos**.
+- 🟡 Apoio à redação e conferência regimental das proposições.
 
-### Coord. de Apoio às Comissões
-- 🟢 **Distribuir** proposições às comissões competentes.
-- 🟢 Controlar **prazos** e **recebimento de pareceres**.
-- 🟡 Agenda de reuniões das comissões e controle de quórum.
+### Coordenadoria de Redação Oficial e Legislativa 🟡
+*Registro de proposições conforme normas regimentais; redação/revisão.*
+- 🟡 **Redação final** e revisão de proposições e autógrafos.
+- 🟡 Padronização regimental do texto.
 
-### Coord. de Atas e Projetos
-- 🟡 Registrar **atas** de sessão e o **resultado das votações**.
-- 🟡 Vincular decisões do plenário à proposição.
+### Coordenadoria de Assuntos de Plenário 🟡
+*Pautas de sessão, ordens do dia, expedientes.*
+- 🟡 Montar **pauta / ordem do dia**; incluir/excluir matérias.
+- 🟡 Controlar leitura no expediente e adiamentos/retiradas de pauta.
 
-### Coord. de Redação Legislativa
-- ⚪ Elaborar/registrar a **redação final** e o **autógrafo**.
-- ⚪ Controlar prazos de sanção/veto e a promulgação.
+### Coordenadoria de Atas e Projetos 🟡
+- 🟡 Lavrar/revisar **atas** de plenário e comissões; vincular à proposição.
+- 🟡 Registrar resultado de deliberações; Livro de Posse.
+
+### Diretoria de Plenário 🟡
+- 🟡 Coordenar o apoio técnico às sessões; consolidar pauta e ordem do dia.
+- 🟡 Painel do andamento das sessões.
+
+### Assistência às Comissões Permanentes 🟡
+- 🟡 Apoio às comissões: **distribuição**, controle de prazos, **pareceres e votos**.
+- 🟡 Elaboração/revisão de atas das comissões.
+
+### Consultoria-Geral Legislativa 🟡
+- 🟡 Emitir **parecer** sobre projetos de lei, emendas e proposições vinculado ao processo.
+
+### Coordenadoria de Publicações e Transparência ⚪
+- ⚪ **Publicação oficial** de atos normativos; alimentar o Portal da Transparência.
 
 ---
 
-## Gabinetes dos Vereadores 🟢
+## Autores das proposições
+
+### Gabinetes dos Vereadores / Assessoria de Gabinete Parlamentar 🟢
 - 🟢 **Apresentar/protocolar** proposições (autoria e coautoria/subscrição).
-- 🟢 **Acompanhar o status** e o histórico das próprias matérias (e das demais).
-- 🟡 Apresentar **emendas** a projetos em tramitação.
-- 🟡 Notificações de mudança de situação (ex.: parecer emitido, incluído em pauta).
+- 🟢 **Acompanhar status** e histórico das matérias.
+- 🟡 Apresentar **emendas**; receber **notificações** de mudança de situação.
 
-## Mesa Diretora 🟡
+### Assessores Parlamentares / Assessoria Especial da Presidência 🟡
+- 🟡 Análise de proposições, pareceres técnicos e estudos a pedido.
+
+### Presidência / Mesa Diretora 🟡
 - 🟡 **Despachos** e decisões sobre proposições e requerimentos.
-- 🟡 Deferir/indeferir requerimentos; determinar diligências.
-- 🟡 Painel gerencial (matérias paradas, prazos vencidos, produtividade).
-
-## Comissões / Relatores 🟡
-- 🟡 Designar **relator**; emitir **parecer** (constitucionalidade, legalidade, mérito).
-- 🟡 Registrar votos e o resultado da comissão.
-- 🟡 Pedidos de **vista** e **diligência**.
+- 🟡 Painel gerencial (matérias paradas, prazos vencidos, produtividade por setor).
 
 ---
 
-## Órgãos assessores e administrativos
+## Órgãos de apoio, controle e infraestrutura
 
-### Consultoria Jurídica / Procuradoria 🟡
-- 🟡 Emitir **pareceres jurídicos** vinculados à proposição.
+### Procuradoria-Geral 🟡
+- 🟡 Consultoria jurídica institucional; pareceres vinculados a processos.
 
 ### Controladoria-Geral ⚪
-- ⚪ Consultar trilha de auditoria e indicadores para **controle interno**.
+- ⚪ Consultar trilha de auditoria e indicadores para controle interno.
 
-### Diretoria de Orçamento, Finanças e Contabilidade ⚪
-- ⚪ Registrar **estimativa de impacto orçamentário-financeiro** de proposições que o exijam.
+### Coordenadoria de Tecnologia da Informação e Comunicação (TIC) ⭐ 🟢
+- 🟢 **Administração do sistema**: usuários, papéis e permissões por setor.
+- 🟢 Parametrização (tipos de proposição, regras de quórum, cadastro de órgãos).
+- 🟡 Integrações, backups e monitoramento.
 
-### Coord. de Processamento de Dados / TI 🟢
-- 🟢 **Administração do sistema**: cadastro de usuários, papéis e permissões por setor.
-- 🟢 Parametrização (tipos de proposição, regras de quórum, órgãos).
-- 🟡 Integrações e backups.
+### Comissão Permanente de Proteção de Dados Pessoais 🟢
+- 🟢 Definir requisitos de **LGPD** (dados pessoais, base legal, retenção, trilha de acesso).
 
-### Documentação Histórica / Arquivo ⚪
-- ⚪ Guarda permanente e acervo normativo consultável.
+### Ouvidoria-Geral ⚪
+- ⚪ Canal do cidadão; futura integração com o portal público.
+
+### Diretoria da Escola do Legislativo ⚪
+- ⚪ Capacitação dos servidores no uso do sistema.
+
+### Superintendência de Assuntos Estratégicos 🟢 (patrocínio)
+- 🟢 *Transformação digital* — patrocinadora natural do projeto; alinhar prioridades e roadmap.
 
 ---
 
 ## Cidadão (fora do MVP) ⚪
-- ⚪ Consulta pública de proposições, leis, sessões e votações (portal de transparência).
+- ⚪ Consulta pública de proposições, leis, sessões e votações.
 
 ---
 
-## Como usar este mapa
+## Como usar este mapa (levantamento de requisitos)
 
-1. Para cada setor, marcar uma **conversa de levantamento** e confirmar/ajustar as demandas.
-2. Perguntas-guia por setor:
-   - Qual é o seu papel no fluxo de uma proposição, do início ao fim?
-   - O que você **registra**, o que apenas **consulta** e o que **decide/despacha**?
-   - Quais **prazos** e **documentos** são obrigatórios na sua etapa?
-   - O que hoje é feito em papel/planilha e deveria estar no sistema?
-   - Que **relatórios** você precisa ver?
-3. Consolidar as respostas aqui e usar para priorizar o backlog do MVP.
+Para cada setor, marcar uma conversa e confirmar/ajustar as demandas. Perguntas-guia:
+1. Qual é o seu papel no fluxo de uma proposição, do protocolo ao arquivamento?
+2. O que você **registra**, o que apenas **consulta** e o que **decide/despacha**?
+3. Quais **prazos** e **documentos** são obrigatórios na sua etapa?
+4. O que hoje é feito em papel/planilha e deveria estar no sistema?
+5. Que **relatórios** você precisa ver?
+
+Consolidar as respostas aqui e usar para priorizar o backlog do MVP.
