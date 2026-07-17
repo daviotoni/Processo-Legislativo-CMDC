@@ -24,8 +24,10 @@ e as regras de negócio do sistema reflitam a realidade institucional.
 ## Aplicação (MVP)
 
 A aplicação web do MVP está em [`web/`](web/) — **Next.js + TypeScript + Supabase**, implementando
-o fluxo *registrar → protocolar → tramitar → arquivar*. Banco em [`db/`](db/). Veja
-[`web/README.md`](web/README.md) para rodar.
+o fluxo *registrar → protocolar → tramitar → arquivar*. Banco em [`db/`](db/).
+
+👉 **Para rodar passo a passo (sem ser programador):** [`docs/GUIA-EXECUCAO.md`](docs/GUIA-EXECUCAO.md).
+Detalhes técnicos em [`web/README.md`](web/README.md).
 
 ## Fonte
 
