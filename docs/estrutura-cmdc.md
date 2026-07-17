@@ -80,6 +80,24 @@ A Mesa exerce a direção; os órgãos abaixo formam a estrutura técnico-admini
 > (Legislação e Justiça, Finanças e Orçamento, etc.) — estas últimas estão em
 > [`processo-legislativo.md`](processo-legislativo.md).
 
+## 7. Anexo I — quadro de cargos e quantitativos (confirmado)
+
+O **Anexo I** da lei (denominação, símbolo, retribuição e quantitativo) traz **49 espécies de
+cargos/funções**, totalizando **615 postos**. Maiores concentrações:
+
+| Cargo/função | Quantitativo |
+|--------------|:---:|
+| Assessor Parlamentar I | 96 |
+| Assessor Parlamentar II | 96 |
+| Assistente de Gabinete I | 90 |
+| Assessor Parlamentar III | 70 |
+| Assistente de Gabinete II | 70 |
+
+> A forte concentração em assessoramento parlamentar e gabinetes confirma: o modelo de acesso precisa
+> ser granular (lotação + cargo + papel + delegação + sigilo), e o cadastro de cargos deve ser
+> **parametrizado pelo Anexo I** (dado, não código). O **Anexo II (organograma)** existe como imagem
+> e está pendente apenas de conferência em alta resolução (linhas de subordinação).
+
 ## Implicações para o sistema
 
 - Os **nomes de órgãos** do cadastro do sistema devem seguir a Lei 3.525/2025.

@@ -18,13 +18,22 @@
   horário** (art. 3º, §3º) → o sistema precisa suportar acesso remoto e delegação.
 - ✅ **Controlador-Geral é privativo de servidor efetivo** (art. 51, § único) → regra de
   **elegibilidade por vínculo** (já modelada: `papel.exige_vinculo_efetivo`).
-- ⚠️ **Anexo I** (cargos, quantitativos, lotações, remunerações): existe (art. 3º §1º), mas o
-  **quantitativo "615 cargos"** citado no estudo **não foi confirmado** no texto navegável.
-- ⚠️ **Anexo II (organograma)** e **efeitos financeiros a partir de 01/09/2025**: **não localizados**
-  no texto — validar com a fonte oficial/Boletim nº 7632.
+- ✅ **Anexo I** (denominação, símbolo, retribuição e quantitativo) **confirmado na publicação
+  oficial da CMDC**: **49 espécies de cargos/funções**, totalizando **615 postos**. Maiores
+  quantitativos: 96 Assessores Parlamentares I, 96 Assessores Parlamentares II, 90 Assistentes de
+  Gabinete I, 70 Assessores Parlamentares III e 70 Assistentes de Gabinete II.
+- ✅ **Hierarquia da Casa (art. 2º)** confirmada: 1º grau (órgãos superiores), 2º grau
+  (coordenadorias + Diretoria Administrativa), 3º grau (assessoramento parlamentar), 4º grau
+  (serviços auxiliares).
+- ⚠️ **Anexo II (organograma)**: existe como **imagem** vinculada à página, mas ainda **pendente de
+  conferência em alta resolução** para validar graficamente as linhas de subordinação. Não bloqueia
+  o projeto — os nomes (art. 2º), atribuições (arts. 11–48 e 49–98) e quantitativos (Anexo I) já
+  estão disponíveis no texto legal.
+- ⚠️ **Efeitos financeiros a partir de 01/09/2025**: citado no estudo, ainda a confirmar no texto.
 
 > Implicação de produto: o cadastro organizacional deve ser **parametrizado pelo Anexo I**
-> (dado, não código), pois a lei permite remanejamentos futuros por resolução.
+> (dado, não código), pois a lei permite remanejamentos futuros por resolução. Os 615 postos e as
+> 49 espécies servem de base para o **motor de lotação** e para o dimensionamento de perfis.
 
 ## 2. Quatro macrodomínios de negócio
 
@@ -101,8 +110,17 @@ Histórica, Assuntos Estratégicos. Baixa: serviços auxiliares (copa, transport
 - **Roadmap pós-MVP:** os demais domínios (jurídico, administrativo-financeiro, transparência)
   entram nas fases seguintes, reusando a camada compartilhada.
 
-## 8. A validar (antes de assumir como verdade)
+## 8. Situação da validação (atualizado)
 
-- Quantitativo do Anexo I e o organograma do Anexo II (obter o PDF oficial da lei/Boletim 7632).
-- Cláusula de vigência e efeitos financeiros.
-- Numeração dos artigos citados pelo estudo (usar sempre o texto oficial como fonte).
+A estrutura administrativa, os cargos, as funções e os quantitativos da Lei nº 3.525/2025 **já foram
+identificados na publicação oficial da CMDC**. Permanece pendente apenas:
+
+- ⚠️ **Conferência visual do Anexo II em alta resolução** — para validar graficamente as relações de
+  subordinação do organograma (sem prejuízo do mapeamento funcional, que já é possível pelo texto
+  legal: nomes no art. 2º, atribuições dos órgãos nos arts. 11–48, atribuições dos cargos nos
+  arts. 49–98 e quantitativos no Anexo I).
+- ⚠️ Cláusula de **vigência e efeitos financeiros** (confirmar no texto/Boletim nº 7632).
+
+> Conclusão: **não é preciso aguardar o PDF** para elaborar a matriz
+> *setor → atribuição legal → funcionalidade → perfil → documento → integração*. A única lacuna é
+> gráfica (linhas de subordinação do Anexo II).
