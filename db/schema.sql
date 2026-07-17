@@ -38,16 +38,20 @@ CREATE TABLE usuario (
     nome       text    NOT NULL,
     email      text    NOT NULL UNIQUE,
     senha_hash text    NOT NULL,
-    orgao_id   bigint  REFERENCES orgao(id),
+    orgao_id   bigint  REFERENCES orgao(id),   -- lotacao formal (dimensao ABAC)
     cargo_id   bigint  REFERENCES cargo(id),
+    vinculo    text    NOT NULL DEFAULT 'COMISSIONADO'
+               CHECK (vinculo IN ('EFETIVO','COMISSIONADO','REQUISITADO','FUNCAO_GRATIFICADA')),
     ativo      boolean NOT NULL DEFAULT true,
     criado_em  timestamptz NOT NULL DEFAULT now()
 );
+COMMENT ON COLUMN usuario.vinculo IS 'Tipo de vinculo; sustenta regras de elegibilidade (ex.: Controle Interno privativo de EFETIVO — Lei 3.525/2025, art. 51 par. unico).';
 
 CREATE TABLE papel (
     id        bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     nome      text NOT NULL UNIQUE,          -- ex.: PROTOCOLO, TRAMITACAO, AUTOR_GABINETE, CONSULTA, ADMIN
-    descricao text
+    descricao text,
+    exige_vinculo_efetivo boolean NOT NULL DEFAULT false  -- ex.: CONTROLE_INTERNO (art. 51 par. unico)
 );
 
 CREATE TABLE permissao (
@@ -67,6 +71,23 @@ CREATE TABLE usuario_papel (
     papel_id   bigint NOT NULL REFERENCES papel(id) ON DELETE CASCADE,
     PRIMARY KEY (usuario_id, papel_id)
 );
+
+-- Delegacao / substituicao formal (dimensao ABAC): permite que um usuario atue
+-- temporariamente com o papel de outro, mediante ato formal e prazo. (arts. 3o, 5o, 44-47, 79)
+CREATE TABLE delegacao (
+    id                  bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    delegante_id        bigint NOT NULL REFERENCES usuario(id),
+    delegado_id         bigint NOT NULL REFERENCES usuario(id),
+    papel_id            bigint REFERENCES papel(id),     -- papel delegado (nulo = todos do delegante)
+    orgao_id            bigint REFERENCES orgao(id),     -- escopo opcional
+    ato_formal          text,                            -- ex.: Portaria/Designacao no XXX
+    inicio              date NOT NULL,
+    fim                 date,                            -- nulo = por prazo indeterminado
+    ativo               boolean NOT NULL DEFAULT true,
+    criado_em           timestamptz NOT NULL DEFAULT now(),
+    CHECK (delegante_id <> delegado_id)
+);
+CREATE INDEX idx_delegacao_delegado ON delegacao (delegado_id, ativo);
 
 -- E0.4 Tipos de proposicao (parametrizavel — regras variam por tipo)
 CREATE TABLE tipo_proposicao (
@@ -149,6 +170,8 @@ CREATE TABLE processo (
     arquivado            boolean NOT NULL DEFAULT false,
     motivo_arquivamento  text,
     data_arquivamento    timestamptz,
+    nivel_sigilo         text NOT NULL DEFAULT 'INTERNO'
+                         CHECK (nivel_sigilo IN ('PUBLICO','INTERNO','RESTRITO_FUNCIONAL','RESTRITO_SENSIVEL')),
     UNIQUE (numero, ano)
 );
 
@@ -164,6 +187,8 @@ CREATE TABLE proposicao (
     texto              text,
     status_edicao      text NOT NULL DEFAULT 'RASCUNHO'
                        CHECK (status_edicao IN ('RASCUNHO','PROTOCOLADA')),
+    nivel_sigilo       text NOT NULL DEFAULT 'PUBLICO'       -- proposicoes nascem publicas, salvo excecao legal
+                       CHECK (nivel_sigilo IN ('PUBLICO','INTERNO','RESTRITO_FUNCIONAL','RESTRITO_SENSIVEL')),
     data_protocolo     timestamptz,
     criado_por         bigint REFERENCES usuario(id),
     criado_em          timestamptz NOT NULL DEFAULT now(),
@@ -185,6 +210,9 @@ CREATE TABLE anexo (
     tipo_mime     text,
     caminho       text NOT NULL,                             -- storage (ex.: Supabase Storage)
     tamanho_bytes bigint,
+    hash_sha256   text,                                      -- cadeia de custodia / integridade
+    nivel_sigilo  text NOT NULL DEFAULT 'INTERNO'
+                  CHECK (nivel_sigilo IN ('PUBLICO','INTERNO','RESTRITO_FUNCIONAL','RESTRITO_SENSIVEL')),
     enviado_por   bigint REFERENCES usuario(id),
     criado_em     timestamptz NOT NULL DEFAULT now()
 );

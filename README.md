@@ -11,6 +11,7 @@ e as regras de negócio do sistema reflitam a realidade institucional.
 | Documento | Conteúdo |
 |-----------|----------|
 | [`docs/escopo.md`](docs/escopo.md) | **Escopo do projeto**: visão, foco, MVP, roadmap por fases |
+| [`docs/visao-plataforma.md`](docs/visao-plataforma.md) | **Visão de plataforma** (norte de longo prazo): macrodomínios, capacidades, acesso RBAC+ABAC |
 | [`docs/caminho-construcao.md`](docs/caminho-construcao.md) | **Caminho de construção**: o que faremos, ancorado nas atribuições legais de cada setor |
 | [`docs/backlog-mvp.md`](docs/backlog-mvp.md) | **Backlog do MVP** (Fase 0 + 1): épicos, histórias, regras e critérios de aceite |
 | [`docs/modelo-dados.md`](docs/modelo-dados.md) | **Modelo de dados**: diagrama, entidades e decisões (esquema em `db/`) |

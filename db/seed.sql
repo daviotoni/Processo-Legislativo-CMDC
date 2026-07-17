@@ -14,13 +14,14 @@ INSERT INTO tipo_proposicao (nome, sigla, exige_sancao, turnos, quorum) VALUES
  ('Requerimento',                 'REQ',     false, 1, 'MAIORIA_SIMPLES'),
  ('Mocao',                        'MOC',     false, 1, 'MAIORIA_SIMPLES');
 
--- Papeis (E0.3)
-INSERT INTO papel (nome, descricao) VALUES
- ('ADMIN',         'Administracao do sistema (TIC)'),
- ('PROTOCOLO',     'Protocolar e autuar proposicoes (Secretaria-Geral)'),
- ('TRAMITACAO',    'Despachar e movimentar processos'),
- ('AUTOR_GABINETE','Registrar proposicoes e acompanhar (Gabinetes)'),
- ('CONSULTA',      'Somente consulta');
+-- Papeis (E0.3). exige_vinculo_efetivo trava elegibilidade por vinculo do usuario.
+INSERT INTO papel (nome, descricao, exige_vinculo_efetivo) VALUES
+ ('ADMIN',           'Administracao do sistema (TIC)',                     false),
+ ('PROTOCOLO',       'Protocolar e autuar proposicoes (Secretaria-Geral)', false),
+ ('TRAMITACAO',      'Despachar e movimentar processos',                  false),
+ ('AUTOR_GABINETE',  'Registrar proposicoes e acompanhar (Gabinetes)',    false),
+ ('CONSULTA',        'Somente consulta',                                  false),
+ ('CONTROLE_INTERNO','Controladoria — privativo de servidor efetivo (art. 51)', true);
 
 -- Permissoes (E0.3 / E1.7)
 INSERT INTO permissao (acao, descricao) VALUES

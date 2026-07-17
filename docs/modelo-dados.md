@@ -79,6 +79,16 @@ erDiagram
 5. **Composições temporais.** Comissões e Mesa mudam por biênio; por isso `comissao` guarda o biênio
    e `parlamentar` a legislatura — o histórico de composições anteriores é preservado.
 
+6. **Acesso RBAC + ABAC (5 dimensões).** A permissão final combina: **lotação** (`usuario.orgao_id`),
+   **cargo/vínculo** (`usuario.cargo_id`, `usuario.vinculo`), **papel** (`usuario_papel`),
+   **delegação** (`delegacao`, com ato formal e prazo) e **nível de sigilo** (`*.nivel_sigilo`).
+   Regras de elegibilidade por vínculo são representáveis (`papel.exige_vinculo_efetivo` — ex.:
+   Controlador-Geral privativo de efetivo, art. 51 § único). Ver [`visao-plataforma.md`](visao-plataforma.md).
+
+7. **Sigilo e cadeia de custódia.** `processo`, `proposicao` e `anexo` têm `nivel_sigilo`
+   (`PUBLICO`/`INTERNO`/`RESTRITO_FUNCIONAL`/`RESTRITO_SENSIVEL`); `anexo.hash_sha256` garante
+   integridade documental. Concilia LAI (transparência) e LGPD (proteção de dados).
+
 ## Como aplicar (Supabase/Postgres)
 
 ```bash
