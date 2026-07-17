@@ -10,6 +10,8 @@ e as regras de negócio do sistema reflitam a realidade institucional.
 
 | Documento | Conteúdo |
 |-----------|----------|
+| [`docs/escopo.md`](docs/escopo.md) | **Escopo do projeto**: visão, foco, MVP, roadmap por fases |
+| [`docs/demandas-por-setor.md`](docs/demandas-por-setor.md) | **Demandas de cada setor** no ciclo de vida da proposição (roteiro de levantamento) |
 | [`docs/estrutura-cmdc.md`](docs/estrutura-cmdc.md) | Estrutura administrativa (Mesa Diretora, órgãos assessores, Diretoria-Geral e subordinadas) |
 | [`docs/processo-legislativo.md`](docs/processo-legislativo.md) | Poder Legislativo, tipos de proposições, tramitação e comissões |
 | [`docs/modelagem-inicial.md`](docs/modelagem-inicial.md) | Primeiras entidades/domínios sugeridos para o sistema |
