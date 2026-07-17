@@ -130,12 +130,14 @@ CREATE TABLE legislatura (
 );
 
 CREATE TABLE parlamentar (
-    id             bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    nome           text NOT NULL,
-    partido        text,
-    legislatura_id bigint REFERENCES legislatura(id),
-    situacao       text NOT NULL DEFAULT 'ATIVO'
-                   CHECK (situacao IN ('ATIVO','LICENCIADO','SUPLENTE'))
+    id                bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    nome              text NOT NULL,                       -- nome civil completo
+    nome_parlamentar  text,                                -- nome/apelido parlamentar (como consta)
+    partido           text,
+    legislatura_id    bigint REFERENCES legislatura(id),
+    gabinete_orgao_id bigint REFERENCES orgao(id),         -- gabinete do vereador (grau GABINETE)
+    situacao          text NOT NULL DEFAULT 'ATIVO'
+                      CHECK (situacao IN ('ATIVO','LICENCIADO','SUPLENTE'))
 );
 
 CREATE TABLE comissao (
